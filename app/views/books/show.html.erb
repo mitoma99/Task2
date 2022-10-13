@@ -1,13 +1,18 @@
-<div>
+<body>
+    <font color = "green">
   <%= flash[:notice] %>
-</div>
+</font>
+    <p>
+        <strong>Title:</strong>
+        <%= @book.title %>
+    </p>
+    <p>
+        <strong>Body:</strong>
+        <%= @book.body %>
+    </p>
 
-<h2>Books:</h2>
-<p><%= @book.title %></p>
+<a><%= link_to "Edit", edit_book_path(@book.id) %></a>
+|
+<a><%= link_to "Back", '/books' %></a>
 
-<h2>body:</h2>
-<p><%= @book.body %></p>
-
-<%= link_to "Edit", edit_book_path(@book.id) %>
-<%= link_to "Back", '/books' %>
-
+</body>
